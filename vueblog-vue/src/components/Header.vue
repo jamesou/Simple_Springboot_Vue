@@ -1,19 +1,19 @@
 <template>
     <div class="m-content">
-        <h3>欢迎来到JamesOu的博客</h3>
+        <h3>Welcome to JamesOu's Blog</h3>
         <div class="block">
             <el-avatar :size="50" :src="user.avatar"></el-avatar>
             <div>{{user.username}}</div>
         </div>
         <div class="maction">
-            <span><el-link href="/blogs">主页</el-link></span>
+            <span><el-link href="/blogs">main page</el-link></span>
             <el-divider direction="vertical"></el-divider>
-            <span><el-link type="success" href="/#/blog/add">发表博客</el-link></span>
+            <span><el-link type="success" href="/#/blog/add">post</el-link></span>
 
             <el-divider direction="vertical"></el-divider>
-            <span v-show="!hasLogin"><el-link type="primary" href="/login#/login">登录</el-link></span>
+            <span v-show="!hasLogin"><el-link type="primary" href="/login#/login">login</el-link></span>
 
-            <span v-show="hasLogin"><el-link type="danger" @click="logout">退出</el-link></span>
+            <span v-show="hasLogin"><el-link type="danger" @click="logout">logout</el-link></span>
         </div>
 
     </div>

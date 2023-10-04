@@ -58,7 +58,6 @@ public class BlogController {
             // only can edit the article wrote by theirself
             Assert.isTrue(temp.getUserId().longValue() == ShiroUtil.getProfile().getId().longValue(), "no permission to edit");
         } else {
-
             temp = new Blog();
             temp.setUserId(ShiroUtil.getProfile().getId());
             temp.setCreated(LocalDateTime.now());

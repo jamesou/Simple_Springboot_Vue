@@ -19,7 +19,7 @@
                         size="mini"
                         type="danger"
                         icon="el-icon-delete"
-                        @click="deleteBlog(blog.id)">删除
+                        @click="deleteBlog(blog.id)">Delete
                 </el-button>
                 </el-timeline-item>
 
@@ -67,17 +67,17 @@
              async deleteBlog(id) {
                  const blogId = id
                  const _this = this
-                 const confirmResult = await this.$confirm('此操作将永久删除用户，是否继续?', "提示", {
-                     confirmButtonText: "确定",
-                     cancelButtonText: "取消",
+                 const confirmResult = await this.$confirm('Permanently delete the user，Continue?', "Prompt", {
+                     confirmButtonText: "Confirm",
+                     cancelButtonText: "Cancel",
                      type: 'warning',
                  }).catch(err => err)
                  if (confirmResult != 'confirm') {
-                     return this.$message.info("已取消删除");
+                     return this.$message.info("Cancel delete");
                  }
                  const{data:res}=await _this.$axios.get("/blog/drop/" + blogId)
 
-                return  this.$message.success("删除成功");
+                return  this.$message.success("Delete success");
                 location.reload();
              },
 

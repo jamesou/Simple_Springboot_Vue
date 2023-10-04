@@ -3,7 +3,7 @@
         <Header></Header>
         <div class="mblog">
             <h2>{{ blog.title }}</h2>
-            <el-link icon="el-icon-edit" v-if="ownBlog"><router-link :to="{name: 'BlogEdit', params: {blogId: blog.id}}">编辑</router-link></el-link>
+            <el-link icon="el-icon-edit" v-if="ownBlog"><router-link :to="{name: 'BlogEdit', params: {blogId: blog.id}}">edit</router-link></el-link>
             <el-divider></el-divider>
             <div class="content markdown-body" v-html="blog.content"></div>
         </div>

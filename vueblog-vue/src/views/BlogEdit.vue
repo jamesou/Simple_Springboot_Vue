@@ -5,21 +5,21 @@
         <div class="m-content">
 
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="标题" prop="title">
+                <el-form-item label="title" prop="title">
                     <el-input v-model="ruleForm.title"></el-input>
                 </el-form-item>
 
-                <el-form-item label="摘要" prop="description">
+                <el-form-item label="description" prop="description">
                     <el-input type="textarea" v-model="ruleForm.description"></el-input>
                 </el-form-item>
 
-                <el-form-item label="内容" prop="content">
+                <el-form-item label="content" prop="content">
                     <mavon-editor v-model="ruleForm.content"></mavon-editor>
                 </el-form-item>
 
                 <el-form-item>
-                    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-                    <el-button @click="resetForm('ruleForm')">重置</el-button>
+                    <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
+                    <el-button @click="resetForm('ruleForm')">Reset</el-button>
                 </el-form-item>
             </el-form>
 
@@ -45,14 +45,14 @@
                 },
                 rules: {
                     title: [
-                        { required: true, message: '请输入标题', trigger: 'blur' },
-                        { min: 3, max: 25, message: '长度在 3 到 25 个字符', trigger: 'blur' }
+                        { required: true, message: 'Please input the title', trigger: 'blur' },
+                        { min: 3, max: 25, message: 'The length is from 3 to 25 charaters', trigger: 'blur' }
                     ],
                     description: [
-                        { required: true, message: '请输入摘要', trigger: 'blur' }
+                        { required: true, message: 'Please input the description', trigger: 'blur' }
                     ],
                     content: [
-                        { trequired: true, message: '请输入内容', trigger: 'blur' }
+                        { trequired: true, message: 'Please input the content', trigger: 'blur' }
                     ]
                 }
             };
@@ -68,8 +68,8 @@
                             }
                         }).then(res => {
                             console.log(res)
-                            _this.$alert('操作成功', '提示', {
-                                confirmButtonText: '确定',
+                            _this.$alert('Submit success', 'Prompt', {
+                                confirmButtonText: 'Confirm',
                                 callback: action => {
                                     _this.$router.push("/blogs")
                                 }
